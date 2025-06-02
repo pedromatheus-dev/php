@@ -10,6 +10,10 @@
 <body>
     <h1>Dados do Servidor</h1>
     <p><?php phpinfo();?></p>
+    <!-- short tag PHP -->
+    <?="olá mundo" ?>
+    <!-- short open tag -->
+    <? echo "assim tambem da" ?>
 </body>
 
 </html>
