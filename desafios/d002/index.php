@@ -7,14 +7,18 @@
 </head>
 <body>
     <h1>Sortedor de Números</h1>
-    <p>Gerando um número aleatório entre 0 e 100...</p>
-    <p>
-        O valor gerado foi <?php echo random_int(0,100);?>
-    </p>
-    <form action="" method="post">
+    <?php 
+        $min = 0;
+        $max = 100;
+        $num_aleatorio = mt_rand($min, $max);
+    ?>
+    <p>Gerando um número aleatório entre <?=$min?> e <?=$max?>...</p>
+    <p>O valor gerado foi <?=$num_aleatorio?>.</p>
+    <!-- <form action="" method="post">
         <input type="submit" value="Gerar">
-    </form>
+    </form> -->
 
     <!-- ir para paginas dinamicamentes ou aleatoriamente coloca no action o codigo php -->
+    <button onclick="javascript:document.location.reload()">&#x1F504; Gerar outro</button>
 </body>
 </html>

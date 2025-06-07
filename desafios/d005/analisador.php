@@ -8,11 +8,15 @@
 <body>
     <h1>Analisando...</h1>
     <?php
-        $numero = $_POST["numero"];
+        $numero = $_POST["numero"] ?? 0;
         $inteiro = floor($numero);
         $decimal = $numero - $inteiro;
-        echo "<p>Parte inteira: $inteiro</p>";
-        echo "<p>Parte decimal: $decimal</p>";
+        $numero = number_format($numero, 3, ",", ".");
+        $inteiro = number_format($inteiro, 0, ",", ".");
+        $decimal = number_format($decimal, 3, ",", ".");
+
+        echo "<p>Analisando número: $numero</p>";
+        echo "<ul><li>Parte inteira: $inteiro</li><li>Parte decimal: $decimal</li></ul>";
     ?>
     <a href="./index.html">Voltar</a>
 </body>
