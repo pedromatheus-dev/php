@@ -14,10 +14,14 @@
 
     <?php 
         $dinheiro = $_POST['dinheiro'] ?? 0;
+        $resto = $dinheiro;
         $n100 = (int) ($dinheiro / 100);
-        $n50 = (int) (($dinheiro - $n100 * 100) / 50);
-        $n10 = (int) (($dinheiro - $n100 * 100 - $n50 * 50) / 10);
-        $n5 = (int) (($dinheiro - $n100 * 100 - $n50 * 50 - $n10 * 10) / 5);
+        $resto %= 100;
+        $n50 = (int) ($resto / 50);
+        $resto %= 50;
+        $n10 = (int) ($resto / 10);
+        $resto %= 10;
+        $n5 = (int) ($resto / 5);
 
         $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
 

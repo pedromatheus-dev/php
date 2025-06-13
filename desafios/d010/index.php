@@ -9,8 +9,8 @@
 
     <?php
         $anoAtual = (int) date('Y');
-        $anoNascimento = $_POST["nascimento"] ?? 0;
-        $anoDesejado = $_POST["anoDesejado"] ?? 0;
+        $anoNascimento = $_POST["nascimento"] ?? 2000;
+        $anoDesejado = $_POST["anoDesejado"] ?? $anoAtual;
         $idade = $anoDesejado - $anoNascimento;
     ?>
 
@@ -18,7 +18,7 @@
     <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
         <p>
             <label for="nascimento">Ano que você nasceu:</label>
-            <input type="number" name="nascimento" id="nascimento" step="1" min="1">
+            <input type="number" name="nascimento" id="nascimento" step="1" min="1" max="<?=$anoAtual - 1?>">
         </p>
         <p>
             <label for="anoDesejado">Quer saber idade em qual ano: (ano atual é <?=$anoAtual?>)</label>

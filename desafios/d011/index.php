@@ -27,7 +27,7 @@
             <input type="number" name="preco" id="preco" step="0.01" min="0">
         </p>
         <p>
-            <label for="reajuste">Percentual de Reajuste: (<strong id="porc">0%</strong>)</label>
+            <label for="reajuste">Percentual de Reajuste: (<strong><span id="porc">0</span>%</strong>)</label>
         </p>
         <p><input type="range" name="reajuste" id="reajuste" min="0" max="1" step="0.01" value="0" oninput="atualizar()"></p>
         <input type="submit" value="Reajustar">
@@ -38,9 +38,7 @@
     </section>
     <script>
         function atualizar(){
-            let range = document.getElementById('reajuste')
-            let porc = document.getElementById('porc')
-            porc.innerHTML = `<strong>${parseInt(range.value * 100)}%</strong>`
+            porc.innerHTML = parseInt(reajuste.value * 100)
         }
     </script>
 </body>

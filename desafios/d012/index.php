@@ -7,15 +7,18 @@
 </head>
 <body>
     <?php 
-        $segundosDesejados = $_POST['segundos'] ?? 3600;
-        $minutos = (int) ($segundosDesejados / 60);
-        $segundos = $segundosDesejados % 60;
-        $horas = (int) ($minutos / 60);
-        $minutos = $minutos % 60;
-        $dias = (int) ($horas / 24);
-        $horas = $horas % 24;
-        $semanas = (int) ($dias / 7);
-        $dias = $dias % 7;
+    
+        $segundosDesejados = $_POST['segundos'] ?? 0;
+        $resto = $segundosDesejados;
+        $semanas = (int) ($resto / 604_800);
+        $resto %= 604_800;
+        $dias = (int) ($resto / 86_400);
+        $resto %= 86_400;
+        $horas = (int) ($resto / 3_600);
+        $resto %= 3_600;
+        $minutos = (int) ($resto / 60);
+        $resto %= 60;
+        $segundos = $resto;
 
     ?>
     <h1>Calculadora de Tempo</h1>
@@ -26,7 +29,7 @@
     </form>
     <section id="resultado">
         <h2>Totalizando tudo</h2>
-        <p>Analisando o valor que você digitou, <strong><?=$segundosDesejados?></strong> equivalem a um total de:</p>
+        <p>Analisando o valor que você digitou, <strong><?=$segundosDesejados?> segundos</strong> equivalem a um total de:</p>
         <ul>
             <li><?=$semanas?> semanas</li>
             <li><?=$dias?> dias</li>
