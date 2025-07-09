@@ -5,7 +5,7 @@
 
     use Pecee\SimpleRouter\Exceptions\NotFoundHttpException;
     use Pecee\SimpleRouter\SimpleRouter;
-        use sistema\Nucleo\Helpers;
+    use sistema\Nucleo\Helpers;
 
     // try {
     //     Helpers::validarCPF('018');

@@ -20,13 +20,23 @@
             $ambiente = str_starts_with($url, "/") ? $url : "/" . $url;
             return $servidor == 'localhost' ? URL_DESENVOLVIMENTO . $ambiente : URL_PRODUCAO . $ambiente;
         }
+
+        // public static function env(string $url = null) : string {
+        //     $servidor = filter_input(INPUT_SERVER, 'SERVER_NAME');
+        //     $base = $servidor == 'localhost' ? URL_DESENVOLVIMENTO : URL_PRODUCAO;
+        //     if ($url === null || $url === '') {
+        //         return $base;
+        //     }
+        //     $ambiente = str_starts_with($url, "/") ? $url : "/" . $url;
+        //     return $base . $ambiente;
+        // }
         
         public static function redirecionar(string $url = null) : void {
             header('HTTP/1.1 302 Found');
 
             $local = ($url ? self::env($url) : self::env());
 
-            header("Location : {$local}");
+            header("Location: {$local}");
             exit();
         }
 
