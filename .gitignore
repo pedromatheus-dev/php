@@ -31,3 +31,8 @@ unset/aulas/aula070/vendor/symfony/deprecation-contracts/
 unset/aulas/aula070/vendor/symfony/polyfill-ctype/
 unset/aulas/aula070/vendor/symfony/polyfill-mbstring/
 unset/aulas/aula070/vendor/twig/twig/
+unset/aulas/aula071/vendor/pecee/simple-router/
+unset/aulas/aula071/vendor/symfony/deprecation-contracts/
+unset/aulas/aula071/vendor/symfony/polyfill-ctype/
+unset/aulas/aula071/vendor/symfony/polyfill-mbstring/
+unset/aulas/aula071/vendor/twig/twig/
